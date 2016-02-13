@@ -1,11 +1,12 @@
 class UrlController < ApplicationController
 
   def new
-    @urls = Url.new
+    @urls = Url.all
   end
 
   def show
     @url = Url.find(params[:id])
+    redirect_to "#{@url.user_url}"
   end
 
   def create
@@ -13,7 +14,7 @@ class UrlController < ApplicationController
 
     respond_to do |format|
       if @url.save
-        format.html { redirect_to @url } 
+        format.html { redirect_to url_new_path(id: @url.id) } 
         format.all { render plain: "We only support HTML", status: :not_acceptable }
       else
         format.html { render :new }
