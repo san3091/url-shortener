@@ -1,0 +1,10 @@
+<h1>Enter your URL</h1>
+<%= form_for(:url) do |f| %>
+  <div class="field">
+    <%= f.label :user_url %>
+    <%= f.text_field :user_url %>
+  </div>
+  <div class="action">
+    <%= f.submit "Shorten" %>
+  </div>
+<% end %>
