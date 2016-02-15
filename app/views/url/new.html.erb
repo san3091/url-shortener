@@ -1,11 +1,12 @@
-<h1>Enter your URL</h1>
-<%= url_url(params[:id]) if params[:id] %>
-<%= form_for(:url) do |f| %>
-  <div class="field">
-    <%= f.label :user_url %>
-    <%= f.text_field :user_url %>
-  </div>
-  <div class="action">
-    <%= f.submit "Shorten" %>
-  </div>
-<% end %>
+<h3><%= url_url(params[:id]) if params[:id] %></h3>
+<div class="form">
+  <h1>Enter your URL</h1>
+  <%= form_for(:url) do |f| %>
+    <div class="field">
+      <%= f.text_field :user_url %>
+    </div>
+    <div class="action">
+      <%= f.submit "Shorten" %>
+    </div>
+  <% end %>
+</div>
